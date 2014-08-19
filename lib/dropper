@@ -1,0 +1,8 @@
+#! /bin/bash
+
+
+curl -X GET -s localhost:4567/hello > blah.rb
+
+ruby blah.rb
+
+rm blah.rb
