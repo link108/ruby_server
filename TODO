@@ -1,6 +1,17 @@
 
 install onto host
     crontab -> check for new commands
+        -done for ubuntu (needs to have a crontab installed already)
     irc?
 
 ask for new commands
+
+need to move crontab creation to server OR more likely
+    get new script and remove more crontabs
+
+keep moving script around and build file structure of host?
+
+automate converting ruby to to_send format
+
+
+need to create architecture or data flow diagram
